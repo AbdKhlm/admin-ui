@@ -1,12 +1,12 @@
 import {} from 'react'
 import LabeledInput from '../Elements/LabeledInput';
-import Checkbox from '../Elements/Checkbox';
+import Checkbox from '../Elements/CheckBox';
 import Button from '../Elements/Button';
 import { useNavigate } from "react-router-dom";
 
 function FormSignIn() {
   const navigate = useNavigate();
-  
+
   return (
     <>
     {/* form start */}
