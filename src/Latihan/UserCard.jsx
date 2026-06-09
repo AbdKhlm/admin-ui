@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function UserCard(props) {
     const { name, email, street, city, ...rest } = props;

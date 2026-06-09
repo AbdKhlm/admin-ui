@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import UserCard from "./UserCard";
 import PostCard from "./PostCard";
 import { getUsers } from "./Services";
-import { posts } from "./postsData";
+import { posts } from "../postsData";
 
 function Exercise() {
   const [users, setUsers] = useState([]);
