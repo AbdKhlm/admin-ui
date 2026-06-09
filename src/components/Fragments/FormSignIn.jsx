@@ -2,11 +2,9 @@ import {} from 'react'
 import LabeledInput from '../Elements/LabeledInput';
 import Checkbox from '../Elements/CheckBox';
 import Button from '../Elements/Button';
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function FormSignIn() {
-  const navigate = useNavigate();
-
   return (
     <>
     {/* form start */}
@@ -83,9 +81,9 @@ function FormSignIn() {
         {/* sign in with google end */}
         {/* link start */}
         <div className="flex justify-center">
-          <a className="text-secondary text-sm font-normal">Do not have an account?</a>
-          <span className="text-gray-03">|</span>
-          <a className="text-primary text-sm font-bold" onClick={() => navigate("/sign-up")}>Sign Up here</a>
+          <Link to="/register" className="text-primary text-sm font-bold">
+          Create an account
+          </Link>
         </div>
         {/* link end */}
     </>

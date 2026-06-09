@@ -1,11 +1,9 @@
 import {} from 'react'
 import LabeledInput from '../Elements/LabeledInput';
 import Button from '../Elements/Button';
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function FormSignUp() {
-    const navigate = useNavigate();
-
   return (
     <>
     {/* form start */}
@@ -86,10 +84,11 @@ function FormSignUp() {
         </div>
         {/* sign in with google end */}
         {/* link start */}
-        <div className="flex justify-center">
-          <a className="text-secondary text-sm font-normal">Already have an account?</a>
-          <span className="text-gray-03">|</span>
-          <a className="text-primary text-sm font-bold" onClick={() => navigate("/")}>Sign In here</a>
+        <div className="flex justify-center text-sm text-gray-01">
+            Already have an account?nbsp;
+          <Link to="/login" className="text-primary text-sm font-bold">
+          Sign In here
+          </Link>
         </div>
         {/* link end */}
     </>
