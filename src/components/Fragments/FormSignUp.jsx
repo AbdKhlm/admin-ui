@@ -85,7 +85,7 @@ function FormSignUp() {
         {/* sign in with google end */}
         {/* link start */}
         <div className="flex justify-center text-sm text-gray-01">
-            Already have an account?nbsp;
+            Already have an account?
           <Link to="/login" className="text-primary text-sm font-bold">
           Sign In here
           </Link>
