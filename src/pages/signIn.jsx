@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import AuthLayout from '../components/Layouts/AuthLayout'
+import AuthLayout from '../components/Layouts/AuthLayouts'
 import FormSignIn from '../components/Fragments/FormSignIn'
 import ModeToggle from '../components/Elements/ModeToggle';
 import { loginService } from '../services/authService';
