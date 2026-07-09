@@ -1,22 +1,34 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-function PostCard(props) {
-    const { id, userId, title, body } = props;
-    const [clicked, setClicked] = useState(false);
+function PostCard({ id, userId, title, body }) {
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div className="p-4 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:border hover:bg-pink-100 flex flex-col justify-between">
+    <div className="group flex flex-col justify-between bg-white p-4 rounded-lg shadow-sm border border-transparent transition-all duration-300 hover:scale-105 hover:border-defaultBlack hover:bg-pink-50">
+      <div className="flex flex-col items-center mb-3">
+        <h2 className="text-sm font-bold text-center text-gray-800 leading-tight mb-2 capitalize">
+          {title}
+        </h2>
+      </div>
       
-      <h2 className="font-bold text-lg mb-2">{title}</h2>
+      <div className="flex flex-col items-center mb-4">
+        <p className="text-gray-500 text-[10px] text-center leading-relaxed">
+          {body}
+        </p>
+      </div>
 
-      <p className="flex-1">{body}</p>
-      
-      <button
-      className={`${clicked ? "bg-specialRed2 text-white hover:brightness-125" : "bg-gray-400 text-white hover:brightness-125"} mt-4 px-4 py-2 rounded transition-all duration-300`}
-        onClick={() => setClicked(true)}
-        >
-        {clicked ? "Tombol sudah diklik" : "Silakan Klik"}
-     </button>
+      <div className="mt-auto">
+        <button
+            onClick={() => setIsClicked(true)}
+            className={`w-full py-1.5 px-3 rounded-md transition-all duration-300 font-medium text-[10px] text-white
+                ${isClicked 
+                ? 'bg-special-red2 group-hover:brightness-120' 
+                : 'bg-gray-500'
+                }`}
+            >
+            {isClicked ? 'Tombol sudah diklik' : 'Silakan Klik'}
+        </button>
+      </div>
     </div>
   );
 }

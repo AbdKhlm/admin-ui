@@ -1,4 +1,4 @@
-import {} from "react";
+import React from "react";
 import { useRouteError } from "react-router-dom";
 import Logo from "../components/Elements/Logo";
 

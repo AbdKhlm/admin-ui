@@ -1,14 +1,50 @@
-import {} from 'react'
-import AuthLayouts  from '../components/Layouts/AuthLayouts'
-import FormSignIn   from '../components/Fragments/FormSignIn'
+import React, { useState } from 'react'
+import AuthLayout from '../components/Layouts/AuthLayout'
+import FormSignIn from '../components/Fragments/FormSignIn'
+import ModeToggle from '../components/Elements/ModeToggle';
+import { loginService } from '../services/authService';
+import {AuthContext} from '../context/authContext';
+import AppSnackbar from '../components/Elements/AppSnackbar';
 
+function SignIn() {
+  const { login } = React.useContext(AuthContext);
 
-function signIn() {
+  	const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: "",
+    severity: "success",
+  }); 
+  
+  const handleCloseSnackbar = () => {
+    setSnackbar((prev) => ({ ...prev, open: false }));
+  };
+
+	const handleLogin = async (email, password) => {
+    try {
+      const { refreshToken } = await loginService(email, password);
+			
+			login(refreshToken); 
+    } catch (err) {
+      setSnackbar({ open: true, message: err.msg, severity: "error" });
+    }
+  };
+
   return (
-    <AuthLayouts>
-        <FormSignIn />
-    </AuthLayouts>
-  );
+    <AuthLayout>
+      <FormSignIn onSubmit ={handleLogin} />
+      <div className="mt-6 flex justify-center">
+        <ModeToggle />
+      </div>
+
+      				<AppSnackbar
+          open={snackbar.open}
+          message={snackbar.message}
+          severity={snackbar.severity}
+          onClose={handleCloseSnackbar}
+        />
+
+    </AuthLayout>
+  )
 }
 
-export default signIn;
+export default SignIn;

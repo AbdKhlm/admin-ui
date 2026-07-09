@@ -1,21 +1,25 @@
-import {} from 'react';
+import React, { useContext } from 'react'
+import { ColorModeContext } from "../../context/colorModeContext";
 
-function Checkbox(props) {
-    const { label, id, ...rest } = props;  // Destructuring assignment
+function CheckBox(props) {
+    const { label, id, ...rest } = props
+    const { isDarkMode } = useContext(ColorModeContext);
   return (
-    <>
-    <input
-                type="checkbox"
-                className="text-sm accent-primary"
-                id={id}
-                {...rest}
-              />
-              <label htmlFor={id} className="text-sm text-gray-01 ml-6"
-              >
-                {label}
-              </label>
-    </>
-  );
+    <div className="flex items-center gap-2">
+        <input
+            type="checkbox"
+            className="accent-primary w-4 h-4"
+            id={id}
+            {...rest}
+        />
+        <label 
+            htmlFor={id}
+            className={`text-sm ${isDarkMode ? "text-gray-200" : "text-gray-01"}`}
+        >
+            {label}
+        </label>
+    </div>
+  )
 }
 
-export default Checkbox;
+export default CheckBox

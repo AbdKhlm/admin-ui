@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import GrandChild from "./GrandChild";
 
 // Component Child
-function Child(props) {
+function Child() {
   return (
-    <div> 
-      <p>Nilai count dari Parent: {props.count}</p>
+    <div className="ps-10">
+      <GrandChild />
     </div>
   );
 }

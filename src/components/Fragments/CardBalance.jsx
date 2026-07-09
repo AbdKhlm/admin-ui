@@ -1,8 +1,9 @@
-import {} from "react";
+import React from "react";
 import Card from "../Elements/Card";
 import DotsMobileStepper from "../Elements/DotsMobileStepper";
 import { Link } from "react-router-dom";
 import Icon from "../Elements/Icon";
+
 
 function CardBalance(props) {
   const { data } = props;
@@ -11,8 +12,7 @@ function CardBalance(props) {
     <>
       <Card
         title="Total Balance"
-        				desc={
-					<DotsMobileStepper
+        desc={<DotsMobileStepper
 	          data={data.map((item) => (
 	            <div key={item.id} className="p-2">
 	              <div className="flex justify-between">
@@ -44,8 +44,7 @@ function CardBalance(props) {
 	              </div>
 	            </div>
 	          ))}
-	        />
-        }
+	        />}
       />
     </>
   );

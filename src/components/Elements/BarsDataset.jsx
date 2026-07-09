@@ -1,5 +1,5 @@
-import { BarChart } from '@mui/x-charts/BarChart';
-import * as React from 'react';
+import { BarChart } from '@mui/x-charts/BarChart'; 
+import * as React from "react";
 import { ThemeContext } from "../../context/themeContext";
 
 const chartSetting = {
@@ -28,10 +28,11 @@ const chartSetting = {
 export default function BarsDataset(props) {
   const { dataset } = props;
   const { theme } = React.useContext(ThemeContext);
+  const barColor = theme?.color ?? "#299D91";
 
   const expensesSeries = dataset.series.map((item) =>
-    item.dataKey === "amountLastWeek" ? {...item, color: theme.color } : item
-);
+    item.dataKey === "amountLastWeek" ? { ...item, color: theme.color } : item
+  );
 
   return (
     <BarChart

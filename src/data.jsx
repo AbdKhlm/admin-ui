@@ -44,7 +44,7 @@ export const expensesBreakdowns = [
     amount: 350,
     percentage: 8,
     icon: <Icon.Food />,
-    arrow: (
+	arrow: (
       <div className="text-special-green">
         <Icon.ArrowDown size={16} />
       </div>
@@ -56,11 +56,7 @@ export const expensesBreakdowns = [
     amount: 50,
     percentage: 12,
     icon: <Icon.Transport />,
-    arrow: (
-      <div className="text-special-green">
-        <Icon.ArrowDown size={16} />
-      </div>
-    ),
+    arrow: <Icon.ArrowDown />,
   },
   {
     id: 4,
@@ -68,11 +64,7 @@ export const expensesBreakdowns = [
     amount: 80,
     percentage: 15,
     icon: <Icon.Gamepad />,
-    arrow: (
-      <div className="text-special-green">
-        <Icon.ArrowDown size={16} />
-      </div>
-    ),
+    arrow: <Icon.ArrowDown />,
   },
   {
     id: 5,
@@ -80,11 +72,7 @@ export const expensesBreakdowns = [
     amount: 420,
     percentage: 25,
     icon: <Icon.Shopping />,
-    arrow: (
-      <div className="text-special-red">
-        <Icon.ArrowUp size={16} />
-      </div>
-    ),
+    arrow: <Icon.ArrowUp />,
   },
   {
     id: 6,
@@ -92,11 +80,7 @@ export const expensesBreakdowns = [
     amount: 650,
     percentage: 23,
     icon: <Icon.Other />,
-    arrow: (
-      <div className="text-special-red">
-        <Icon.ArrowUp size={16} />
-      </div>
-    ),
+    arrow: <Icon.ArrowUp />,
   },
 ];
 
