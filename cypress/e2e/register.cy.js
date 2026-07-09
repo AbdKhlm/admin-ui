@@ -1,7 +1,7 @@
 describe("Register page", () => {
   beforeEach(() => {
     cy.viewport(550, 750);
-    cy.visit("http://localhost:5173/register");
+    cy.visit("/register");
     cy.url().should("include", "/register");
   });
 

@@ -2,7 +2,7 @@ describe("User login", () => {
   it("should allow user to log in with valid credentials", () => {
     cy.viewport(550,750);
 
-    cy.visit("http://localhost:5173/");
+    cy.visit("/");
     cy.url().should("include", "/login");
 
     cy.get("input#email")
@@ -28,7 +28,7 @@ describe("User login", () => {
   it("should not allow user to log in with invalid credentials", () => {
     cy.viewport(550,750);
 
-    cy.visit("http://localhost:5173/");
+    cy.visit("/");
     cy.url().should("include", "/login");
 
     cy.get("input#email")

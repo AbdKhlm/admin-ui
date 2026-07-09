@@ -8,7 +8,7 @@ import { ThemeContext } from "../../context/themeContext";
 
 export default function DotsMobileStepper(props) {
   const { data } = props;
-  const { theme: themeMode } =React.useContext(ThemeContext);
+  const themeMode = React.useContext(ThemeContext)?.theme ?? { color: "#299D91" };
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -55,11 +55,7 @@ export default function DotsMobileStepper(props) {
           </Button>
         }
         backButton={
-          <Button size="small"
-           onClick={handleBack}
-           disabled={activeStep === 0}
-           sx={{ color: "black" }}
-          >
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
             {theme.direction === "rtl" ? (
               <KeyboardArrowRight />
             ) : (
